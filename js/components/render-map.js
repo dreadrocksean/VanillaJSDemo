@@ -19,6 +19,7 @@ function render3() {
 		header: headers.header2,
 		main: mainContents.main1,
 		footer: footers.footer2,
+		advert: adverts.advert1,
 	};
 }
 
@@ -35,6 +36,7 @@ function render5() {
 		header: headers.header2,
 		main: mainContents.main4,
 		footer: footers.footer3,
+		advert: adverts.advert2,
 	};
 }
 

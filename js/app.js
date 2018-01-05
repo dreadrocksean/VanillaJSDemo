@@ -20,6 +20,16 @@ function render(route) {
         case 'render4': page = render4(); break;
         case 'render5': page = render5(); break;
     }
+
+    var placeHolder = document.getElementsByClassName('placeholder')[0]
+    placeHolder.innerHTML = '';
+    if (page.advert) {
+        var advert = document.createElement('div');
+        advert.className = 'advert';
+        advert.innerHTML = page.advert;
+        placeHolder.appendChild(advert);
+    }
+
     document.getElementsByTagName('header')[0].innerHTML = page.header;
     document.getElementsByTagName('main')[0].innerHTML = page.main;
     document.getElementsByTagName('footer')[0].innerHTML = page.footer;
