@@ -36,6 +36,7 @@ function getRouteName(url) {
 }
 
 function indicateCurrMenuItem(route) {
+	route = route || 'render1';
 	var links = document.querySelectorAll('li');
 	for (var i=0; link=links[i]; i++) {
 		link.classList.remove('active');

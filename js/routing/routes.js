@@ -12,12 +12,15 @@ function registerRoutes() {
 }
 
 function storeRoute(path, page) {
-	routes[path] = {page: page};
+	routes[path] = page;
 }
 
 function router() {
 	var url = location.hash.slice(1) || '/';
-	var page = routes[url].page;
+	var page = routes[url];
+	if (!page) {
+		return window.location.href = '#/';
+	}
 	renderPage(page)
 
 	indicateCurrMenuItem(url.replace('/', ''));
