@@ -2,7 +2,7 @@
 var routes = {};
 
 function registerRoutes() {
-	storeRoute('/', 'render1');
+	storeRoute('/', {key: 'render1'});
 	storeRoute('/render1', {key: 'render1'});
 	storeRoute('/render2', {key: 'render2'});
 	storeRoute('/render3', {key: 'render3'});
