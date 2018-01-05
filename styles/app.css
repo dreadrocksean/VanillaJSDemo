@@ -28,11 +28,6 @@ h1 {
 	font-weight: normal;
 	margin-bottom: 10px;
 }
-.navigation {
-	width: 100%;
-	background: #555;
-	overflow: hidden;
-}
 footer {
 	height: 7vw;
 	font-size: 12px;
@@ -50,34 +45,36 @@ main {
 
  
 /*--- horizontal  menu ---*/
-.navigation ul {
+nav {
+	width: 100%;
+	background: #555;
+	overflow: hidden;
+}
+nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: #333;
 }
-.navigation li {
+nav li {
 	float: left;
+	border-right: 1px solid #555;
 }
-.navigation li a {
+nav li a {
 	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 }
-.navigation li {
-	border-right: 1px solid #555;
-}
-
-.navigation li:last-child {
+nav li:last-child {
 	border-right: none;
 }
-.navigation li:not(.active) a:hover {
+nav li:not(.active) a:hover {
 	background-color: #111;
 }
-.active {
+nav .active {
 	background-color: #4CAF50;
 }
 
