@@ -18,6 +18,7 @@ function render(route) {
         case 'render2': page = render2(); break;
         case 'render3': page = render3(); break;
         case 'render4': page = render4(); break;
+        case 'render5': page = render5(); break;
     }
     document.getElementsByTagName('header')[0].innerHTML = page.header;
     document.getElementsByTagName('main')[0].innerHTML = page.main;
