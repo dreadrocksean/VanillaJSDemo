@@ -1,0 +1,153 @@
+/* reset styles */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; padding: 0;  border: 0; outline: 0; font-size: 100%;
+	vertical-align: baseline; background: transparent;
+}
+
+body {
+	background: #d4d4d4;
+	color: #4d4d4d;
+	font-size: 16px;
+	margin: 0;
+	font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1;
+}
+header, footer {
+	text-align: center;
+	height: 9vw;
+	background: #555;
+	color: #ddd;
+	padding: 20px;
+}
+h1 {
+	font-size: 4vw;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.navigation {
+	width: 100%;
+	background: #555;
+	overflow: hidden;
+}
+footer {
+	height: 7vw;
+	font-size: 12px;
+}
+main {
+	padding: 40px;
+}
+
+ 
+/*--- horizontal  menu ---*/
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.navigation li {
+	float: left;
+}
+.navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navigation li {
+    border-right: 1px solid #555;
+}
+
+.navigation li:last-child {
+    border-right: none;
+}
+.navigation li:not(.active) a:hover {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+
+
+
+.listPositionNum {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    border-radius: 100px;
+    padding: 8px;
+    font-size: 26px;
+    line-height: 60px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    text-align: center;
+    margin: auto;
+}
+
+blockquote {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+blockquote {
+    font-family: Georgia, Times, serif !important;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    margin-top: 0px;
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: #fff;
+    position: relative;
+    padding-top: 10px;
+    border-left: 0;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    border-left: 5px solid #eee;
+}
+
+div blockquote:last-child {
+    margin-bottom: 0px;
+}
+
+div blockquote:first-child {
+    margin-top: 0px;
+}
+
+blockquote a {
+    color: #091431;
+}
+
+blockquote cite {
+    border-top: 2px solid #CACACA;
+}
+
+blockquote cite {
+    display: block;
+    width: 50%;
+    margin: 20px auto 0 auto;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    border-top: 2px solid #fff;
+    padding-top: 17px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+
+blockquote cite a {
+    color: #357937;
+}
