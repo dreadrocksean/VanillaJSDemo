@@ -16,7 +16,7 @@ function storeRoute(path, page) {
 
 function router() {
 	var url = location.hash.slice(1) || '/';
-	var pageKey = routes[url].key;
+	var pageKey = (routes[url] || {}).key;
 	if (!pageKey) {
 		return window.location.href = '#/';
 	}
