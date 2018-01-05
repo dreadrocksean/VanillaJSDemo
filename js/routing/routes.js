@@ -3,11 +3,11 @@ var routes = {};
 
 function registerRoutes() {
 	storeRoute('/', 'render1');
-	storeRoute('/render1', 'render1');
-	storeRoute('/render2', 'render2');
-	storeRoute('/render3', 'render3');
-	storeRoute('/render4', 'render4');
-	storeRoute('/render5', 'render5');
+	storeRoute('/render1', {key: 'render1'});
+	storeRoute('/render2', {key: 'render2'});
+	storeRoute('/render3', {key: 'render3'});
+	storeRoute('/render4', {key: 'render4'});
+	storeRoute('/render5', {key: 'render5'});
 }
 
 function storeRoute(path, page) {
@@ -16,7 +16,7 @@ function storeRoute(path, page) {
 
 function router() {
 	var url = location.hash.slice(1) || '/';
-	var pageKey = routes[url];
+	var pageKey = routes[url].key;
 	if (!pageKey) {
 		return window.location.href = '#/';
 	}
