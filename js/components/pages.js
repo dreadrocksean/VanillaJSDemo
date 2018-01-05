@@ -1,6 +1,7 @@
-function renderAdvert(page) {
+function renderAdvert(pageKey) {
 	var placeHolder = document.querySelector('#placeholder');
 	placeHolder.innerHTML = '';
+	var page = renderMap[pageKey]();
 	if (page.advert) {
 		var advert = document.createElement('div');
 		advert.className = 'advert';
@@ -9,12 +10,12 @@ function renderAdvert(page) {
 	}
 }
 
-function renderPage(page) {
-	renderAdvert(page);
+function renderPage(pageKey) {
+	renderAdvert(pageKey);
 
-	document.querySelector('header').innerHTML = page.header;
-	document.querySelector('main').innerHTML = page.main;
-	document.querySelector('footer').innerHTML = page.footer;
+	document.querySelector('header').innerHTML = renderMap[pageKey]().header;
+	document.querySelector('main').innerHTML = renderMap[pageKey]().main;
+	document.querySelector('footer').innerHTML = renderMap[pageKey]().footer;
 
 	setMargins();
 }

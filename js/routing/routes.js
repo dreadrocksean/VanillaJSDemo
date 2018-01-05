@@ -1,14 +1,13 @@
 // Smelly global - hey it's a demo
 var routes = {};
 
-// I knooooo. Not at all scalable :-)
 function registerRoutes() {
-	storeRoute('/', render1());
-	storeRoute('/render1', render1());
-	storeRoute('/render2', render2());
-	storeRoute('/render3', render3());
-	storeRoute('/render4', render4());
-	storeRoute('/render5', render5());
+	storeRoute('/', 'render1');
+	storeRoute('/render1', 'render1');
+	storeRoute('/render2', 'render2');
+	storeRoute('/render3', 'render3');
+	storeRoute('/render4', 'render4');
+	storeRoute('/render5', 'render5');
 }
 
 function storeRoute(path, page) {
@@ -17,11 +16,11 @@ function storeRoute(path, page) {
 
 function router() {
 	var url = location.hash.slice(1) || '/';
-	var page = routes[url];
-	if (!page) {
+	var pageKey = routes[url];
+	if (!pageKey) {
 		return window.location.href = '#/';
 	}
-	renderPage(page)
+	renderPage(pageKey)
 
 	indicateCurrMenuItem(url.replace('/', ''));
 }
