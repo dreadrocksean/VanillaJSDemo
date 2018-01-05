@@ -26,10 +26,11 @@ function router() {
 	indicateCurrMenuItem(url.replace('/', ''));
 }
 
-function renderPage(page) {
-	renderAdvert(page);
-
-	document.querySelector('header').innerHTML = page.header;
-	document.querySelector('main').innerHTML = page.main;
-	document.querySelector('footer').innerHTML = page.footer;
+function indicateCurrMenuItem(route) {
+	route = route || 'render1';
+	var links = document.querySelectorAll('li');
+	for (var i=0; link=links[i]; i++) {
+		link.classList.remove('active');
+	}
+	document.querySelector('.menu-'+route).classList.add('active');
 }

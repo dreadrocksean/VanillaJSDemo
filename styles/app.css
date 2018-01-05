@@ -8,6 +8,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline; background: transparent;
 }
 
+header-container {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
 body {
 	background: #d4d4d4;
 	color: #4d4d4d;
@@ -34,6 +41,7 @@ footer {
 }
 main {
 	padding: 40px;
+    margin-top: 330px;
 }
 .advert {
 	padding: 40px;
