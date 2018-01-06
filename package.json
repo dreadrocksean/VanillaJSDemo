@@ -1,0 +1,25 @@
+{
+  "name": "reusabletest",
+  "version": "1.0.0",
+  "description": "A pure javascript solution to reusable components complete with routing and menu list navigation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "babel": "babel --presets es2015 js/app.js -o build/main.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreadrocksean/VanillaJSDemo.git"
+  },
+  "author": "Adrian Bartholomew <adrian@bartholomusic.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreadrocksean/VanillaJSDemo/issues"
+  },
+  "homepage": "https://github.com/dreadrocksean/VanillaJSDemo#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
