@@ -3,14 +3,14 @@ var routes = {};
 
 function registerRoutes() {
 	storeRoute('/', {key: 'render1'});
-	storeRoute('/render1', {key: 'render1'});
-	storeRoute('/render2', {key: 'render2'});
-	storeRoute('/render3', {key: 'render3'});
-	storeRoute('/render4', {key: 'render4'});
-	storeRoute('/render5', {key: 'render5'});
+	storeRoute('/render1', {key: 'render1'}, function() {});
+	storeRoute('/render2', {key: 'render2'}, function() {});
+	storeRoute('/render3', {key: 'render3'}, function() {});
+	storeRoute('/render4', {key: 'render4'}, function() {});
+	storeRoute('/render5', {key: 'render5'}, function() {});
 }
 
-function storeRoute(path, key) {
+function storeRoute(path, key, controller) {
 	routes[path] = key;
 }
 
