@@ -3,3 +3,6 @@ function app() {
 	registerRoutes();
 	router();
 }
+(function() {
+	window.addEventListener('load', app);
+})();
