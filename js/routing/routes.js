@@ -10,8 +10,8 @@ function registerRoutes() {
 	storeRoute('/render5', {key: 'render5'});
 }
 
-function storeRoute(path, page) {
-	routes[path] = page;
+function storeRoute(path, key) {
+	routes[path] = key;
 }
 
 function router() {
@@ -27,7 +27,7 @@ function router() {
 
 function indicateCurrMenuItem(route) {
 	route = route || 'render1';
-	var links = document.querySelectorAll('li');
+	var links = document.querySelectorAll('nav li');
 	for (var i=0; link=links[i]; i++) {
 		link.classList.remove('active');
 	}
