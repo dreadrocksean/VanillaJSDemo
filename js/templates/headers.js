@@ -1,4 +1,4 @@
-var headers = {
+const headers = {
 	header1: '<h1>Header 1</h1> \
 		<p>This is header 1 text</p>',
 	header2: '<h1>Header 2</h1> \

@@ -1,4 +1,4 @@
-var mainContents = {
+const mainContents = {
 	main1: '<div> \
 		<div class="listPositionNum"> \
             <span>1</span> \

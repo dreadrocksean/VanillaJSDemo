@@ -1,4 +1,4 @@
-var footers = {
+const footers = {
 	footer1: '<div> \
 		<h1>Footer 1</h1> \
 		<p>This is footer 1 text</p> \

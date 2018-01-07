@@ -1,40 +1,40 @@
-var renderMap = {
-	render1: function render1() {
-		return {
+const renderMap = {
+	render1: () => (
+		{
 			header: headers.header1,
 			main: mainContents.main2,
 			footer: footers.footer3,
-		};
-	},
-	render2: function render2() {
-		return {
+		}
+	),
+	render2: () => (
+		{
 			header: headers.header3,
 			main: mainContents.main4,
 			footer: footers.footer1,
-		};
-	},
-	render3: function render3() {
-		return {
+		}
+	),
+	render3: () => (
+		{
 			header: headers.header2,
 			main: mainContents.main1,
 			footer: footers.footer2,
-			advert: adverts.advert1,
-		};
-	},
-	render4: function render4() {
-		return {
+			dvert: adverts.advert1,
+		}
+	),
+	render4: () => (
+		{
 			header: headers.header1,
 			main: mainContents.main3,
 			footer: footers.footer4,
-		};
-	},
-	render5: function render5() {
-		return {
+		}
+	),
+	render5: () => (
+		{
 			header: headers.header2,
 			main: mainContents.main4,
 			footer: footers.footer3,
-			advert: adverts.advert2,
-		};
-	}
+			dvert: adverts.advert2,
+		}
+	)
 };
 
