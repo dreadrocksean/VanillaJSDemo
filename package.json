@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "babel": "babel --presets es2015 js -w --minified -s true -d build"
+    "babel": "babel src/js -w --minified -s true -d lib/js"
   },
   "repository": {
     "type": "git",
