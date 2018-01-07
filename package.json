@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "babel": "babel src/js -w --minified -s true -d lib/js"
+    "build:sass": "node-sass -r --source-map-embed --source-map-contents --output-style compressed src/styles -o lib/styles",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
+    "start": "npm run watch:sass && babel src/js -w --minified -s true -d lib/js"
   },
   "repository": {
     "type": "git",
