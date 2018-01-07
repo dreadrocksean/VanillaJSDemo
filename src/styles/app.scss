@@ -126,11 +126,11 @@ blockquote {
 	border-left: 5px solid #eee;
 
 	&:last-child {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 
 	&:first-child {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	a {
@@ -139,7 +139,6 @@ blockquote {
 
 	cite {
 		display: block;
-		// border-top: 2px solid #CACACA;
 		width: 50%;
 		margin: 20px auto 0 auto;
 		font-size: 20px;
@@ -150,9 +149,6 @@ blockquote {
 		border-top: 2px solid #fff;
 		padding-top: 17px;
 		opacity: 0.7;
-		filter: alpha(opacity=70);
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-
 		a {
 			color: #357937;
 		}
