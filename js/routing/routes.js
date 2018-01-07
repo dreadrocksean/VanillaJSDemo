@@ -28,7 +28,7 @@ function router() {
 function indicateCurrMenuItem(route) {
 	route = route || 'render1';
 	var links = document.querySelectorAll('nav li');
-	for (var i=0; link=links[i]; i++) {
+	for (var i=0,link; link=links[i]; i++) {
 		link.classList.remove('active');
 	}
 	document.querySelector('.menu-'+route).classList.add('active');
