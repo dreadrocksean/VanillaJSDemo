@@ -23,6 +23,7 @@ gulp.task('sass', () => {
 			level: 2,
 			compatibility: 'ie8', 
 		}))
+	    .on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
 		.pipe(sourceMaps.write())
 		.pipe(rename('styles.min.css'))
 		.pipe(gulp.dest('lib'));
@@ -34,12 +35,12 @@ gulp.task('js', () => {
 		.pipe(babel())
 		.pipe(sourceMaps.init())
 		.pipe(uglify())
-	    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+	    .on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
 		.pipe(sourceMaps.write())
 		.pipe(rename('scripts.min.js'))
 		.pipe(gulp.dest('lib'));
 });
 
-gulp.task('watch', ['sass', 'js'], () => {
+gulp.task('default', ['sass', 'js'], () => {
 	return gulp.watch('src/**/*.scss', ['sass', 'js']);
 });
