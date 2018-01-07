@@ -1,4 +1,4 @@
-renderAdvert = page => {
+const renderAdvert = page => {
 	const placeHolder = document.querySelector('#placeholder');
 	placeHolder.innerHTML = '';
 	if (page.advert) {
@@ -9,7 +9,7 @@ renderAdvert = page => {
 	}
 }
 
-renderPage = pageKey => {
+const renderPage = pageKey => {
 	const page = renderMap[pageKey]();
 
 	renderAdvert(page);
@@ -20,7 +20,7 @@ renderPage = pageKey => {
 	setMargins();
 }
 
-setMargins = () => {
+const setMargins = () => {
 	const height = document.querySelector('header-container').offsetHeight;
 	document.querySelector('main').style.marginTop = height+'px';
 }
