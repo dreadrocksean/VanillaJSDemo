@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/dreadrocksean/VanillaJSDemo/issues"
   },
-  "homepage": "https://github.com/dreadrocksean/VanillaJSDemo#readme"
+  "homepage": "https://github.com/dreadrocksean/VanillaJSDemo#readme",
+  "devDependencies": {},
+  "dependencies": {}
 }
