@@ -14,10 +14,12 @@ A short description of the motivation behind the creation and maintenance of the
 
 ## Installation
 
+```
 $ git clone https://github.com/dreadrocksean/VanillaJSDemo.git
 $ git checkout feature/ES6
 $ npm i
 $ gulp
+```
 
 ## Contributors
 
