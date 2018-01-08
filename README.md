@@ -21,6 +21,12 @@ $ npm i
 $ gulp
 ```
 
+For pure ES5 Javascript and CSS with no bells and whistles omit
+```
+$ git checkout feature/ES6
+```
+
+
 ## Contributors
 
 Adrian Bartholomew
