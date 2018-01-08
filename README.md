@@ -29,6 +29,7 @@ Or if you have already executed it, do
 ```
 $ git checkout master
 ```
+. . . then just reload the browser.
 
 
 ## Contributors
