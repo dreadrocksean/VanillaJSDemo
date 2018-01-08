@@ -1,20 +1,22 @@
+import {renderPage} from '../components/main';
+
 // Smelly global - hey it's a demo
 const routes = {};
 
-const registerRoutes = () => {
+export const registerRoutes = () => {
 	storeRoute('/', {key: 'render1'});
-	storeRoute('/render1', {key: 'render1'}, function() {});
-	storeRoute('/render2', {key: 'render2'}, function() {});
-	storeRoute('/render3', {key: 'render3'}, function() {});
-	storeRoute('/render4', {key: 'render4'}, function() {});
-	storeRoute('/render5', {key: 'render5'}, function() {});
+	storeRoute('/render1', {key: 'render1'}, () => {});
+	storeRoute('/render2', {key: 'render2'}, () => {});
+	storeRoute('/render3', {key: 'render3'}, () => {});
+	storeRoute('/render4', {key: 'render4'}, () => {});
+	storeRoute('/render5', {key: 'render5'}, () => {});
 };
 
 const storeRoute = (path, key, controller) => {
 	routes[path] = key;
 };
 
-const router = () => {
+export const router = () => {
 	const url = location.hash.slice(1) || '/';
 	const pageKey = (routes[url] || {}).key;
 	if (!pageKey) {

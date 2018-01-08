@@ -1,4 +1,4 @@
-const mainContents = {
+export const mainContents = {
 	main1: '<div> \
 		<div class="listPositionNum"> \
             <span>1</span> \

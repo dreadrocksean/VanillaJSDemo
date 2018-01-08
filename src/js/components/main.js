@@ -1,3 +1,5 @@
+import {renderMap} from '../routing/render-map';
+
 const renderAdvert = page => {
 	const placeHolder = document.querySelector('#placeholder');
 	placeHolder.innerHTML = '';
@@ -9,7 +11,7 @@ const renderAdvert = page => {
 	}
 }
 
-const renderPage = pageKey => {
+export const renderPage = pageKey => {
 	const page = renderMap[pageKey]();
 
 	renderAdvert(page);

@@ -1,4 +1,9 @@
-const renderMap = {
+import {headers} from '../templates/headers';
+import {mainContents} from '../templates/contents';
+import {adverts} from '../templates/adverts';
+import {footers} from '../templates/footers';
+
+export const renderMap = {
 	render1: () => (
 		{
 			header: headers.header1,

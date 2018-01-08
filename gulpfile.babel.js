@@ -10,37 +10,45 @@ import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
 import babelify from 'babelify';
 import babel from 'gulp-babel';
+import del from 'del';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+
+gulp.task('clean', () => del.sync('lib'));
 
 gulp.task('sass', () => {
 	return gulp.src('src/**/*.scss')
 		.pipe(sass())
 		.pipe(concat('styles.css'))
-        // .pipe(postcss([ autoprefixer() ]))
 		.pipe(autoprefixer())
-		// .pipe(gulp.dest('lib'))
 		.pipe(sourceMaps.init())
 		.pipe(cleanCSS({
 			level: 2,
 			compatibility: 'ie8', 
 		}))
-	    .on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
 		.pipe(sourceMaps.write())
 		.pipe(rename('styles.min.css'))
-		.pipe(gulp.dest('lib'));
+		.pipe(gulp.dest('lib'))
+		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 });
 
 gulp.task('js', () => {
-	return gulp.src('src/**/*.js')
-		.pipe(concat('scripts.js'))
-		.pipe(babel())
-		.pipe(sourceMaps.init())
-		.pipe(uglify())
-	    .on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
-		.pipe(sourceMaps.write())
-		.pipe(rename('scripts.min.js'))
-		.pipe(gulp.dest('lib'));
+	browserify({
+		entries: 'src/js/app.js',
+		debug: true
+	})
+    .transform(babelify.configure({ presets: ['es2015'] }))
+	.bundle()
+	.pipe(source('scripts.min.js'))
+	.pipe(buffer())
+	.pipe(sourceMaps.init())
+	.pipe(uglify())
+	.pipe(sourceMaps.write())
+	.pipe(gulp.dest('./lib'))
+	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 });
 
-gulp.task('default', ['sass', 'js'], () => {
+gulp.task('default', ['clean', 'sass', 'js'], () => {
 	return gulp.watch('src/**/*.scss', ['sass', 'js']);
 });
