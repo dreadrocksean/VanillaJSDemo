@@ -18,10 +18,13 @@ $ gulp
 ```
 
 For pure ES5 Javascript and CSS with no bells and whistles omit
-
-`$ git checkout feature/ES6`
+```
+$ git checkout feature/ES6
+```
 Or if you have already executed it, do
-`$ git checkout master`
+```
+$ git checkout master
+```
 . . . then just reload the browser.
 
 
