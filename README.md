@@ -6,7 +6,7 @@ A simple pure Javascript solution to basic component reuse, routing, sass, ES6 a
 
 ## Motivation
 
-This project was first inspired by a company asking me to write this in vanilla js.  I took it as an opportunity to see what could be done with pure JS in this world of multiple JS frameworks.
+This project was first inspired by a company asking me to write this in vanilla js as a test for employment.  I took it as an opportunity to see what could be done with pure JS in this world of multiple JS frameworks.
 
 ## Installation
 
