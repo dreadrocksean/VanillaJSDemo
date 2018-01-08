@@ -1,0 +1,19 @@
+{
+  "name": "reusabletest",
+  "version": "1.0.0",
+  "description": "A pure javascript solution to reusable components complete with routing and menu list navigation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreadrocksean/VanillaJSDemo.git"
+  },
+  "author": "Adrian Bartholomew <adrian@bartholomusic.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreadrocksean/VanillaJSDemo/issues"
+  },
+  "homepage": "https://github.com/dreadrocksean/VanillaJSDemo#readme"
+}
