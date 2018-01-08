@@ -10,7 +10,7 @@ Show what the library does as concisely as possible, developers should be able t
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+This project was first inspired by a company asking me to write this in vanilla js.  I took it as an opportunity to see what could be done with pure JS in this world of multiple JS frameworks.
 
 ## Installation
 
