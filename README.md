@@ -28,5 +28,3 @@ Or if you have already executed it, do
 ## Contributors
 
 Adrian Bartholomew
-
-## License
