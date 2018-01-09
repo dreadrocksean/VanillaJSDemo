@@ -28,6 +28,7 @@ gulp.task('eslint', done => {
 		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failOnError())
+	console.log('Everything good!')
 	done();
 });
 
@@ -44,10 +45,7 @@ gulp.task('sass', done => {
 		.pipe(sourceMaps.write())
 		.pipe(rename('styles.min.css'))
 		.pipe(gulp.dest('lib'))
-		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
-		.pipe(reload({
-			stream: true
-		}));
+		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 	done();
 });
 
@@ -64,10 +62,7 @@ gulp.task('js', () => {
 	.pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
 	.pipe(sourceMaps.write())
 	.pipe(gulp.dest('./lib'))
-	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
-	.pipe(reload({
-		stream: true
-	}));
+	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 });
 
 gulp.task('serve', () => {
@@ -79,9 +74,12 @@ gulp.task('serve', () => {
 });
 
 gulp.task('watch', ['serve'], () => {
-	gulp.watch('./src/**/*.js', ['eslint', 'js']);
-	gulp.watch('./src/**/*.scss', ['sass']);
-	gulp.watch('**.html', reload);
+	gulp.watch('./src/**/*.js', ['eslint', 'js'])
+		.on('change', reload);
+	gulp.watch('./src/**/*.scss', ['sass'])
+		.on('change', reload);
+	gulp.watch('**.html')
+		.on('change', reload);
 });
 
 gulp.task('default', ['eslint', 'clean', 'sass', 'js', 'watch']);
