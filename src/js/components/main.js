@@ -9,7 +9,7 @@ const renderAdvert = page => {
 		advert.innerHTML = page.advert;
 		placeHolder.appendChild(advert);
 	}
-}
+};
 
 export const renderPage = pageKey => {
 	const page = renderMap[pageKey]();
@@ -20,9 +20,9 @@ export const renderPage = pageKey => {
 	document.querySelector('footer').innerHTML = page.footer;
 
 	setMargins();
-}
+};
 
 const setMargins = () => {
 	const height = document.querySelector('header-container').offsetHeight;
 	document.querySelector('main').style.marginTop = height+'px';
-}
+};

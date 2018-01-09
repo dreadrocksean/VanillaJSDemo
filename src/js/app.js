@@ -5,7 +5,5 @@ const app = () => {
 	window.addEventListener('hashchange', router);
 	registerRoutes();
 	router();
-}
-(() => {
-	window.addEventListener('load', app);
-})();
+};
+window.addEventListener('load', app);

@@ -8,6 +8,8 @@ import cleanCSS from 'gulp-clean-css';
 import sourceMaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
+import notify from 'gulp-notify';
+import eslint from 'gulp-eslint';
 import babelify from 'babelify';
 import babel from 'gulp-babel';
 import del from 'del';
@@ -17,15 +19,24 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
 const sync = browserSync.create();
+const reload = sync.reload;
 
 gulp.task('clean', () => del.sync('lib'));
 
-gulp.task('sass', () => {
-	return gulp.src('src/**/*.scss')
+gulp.task('eslint', done => {
+	gulp.src('src/**/*.js')
+		.pipe(eslint())
+		.pipe(eslint.format())
+		.pipe(eslint.failOnError())
+	done();
+});
+
+gulp.task('sass', done => {
+	gulp.src('src/**/*.scss')
 		.pipe(sass())
+		.pipe(sourceMaps.init())
 		.pipe(concat('styles.css'))
 		.pipe(autoprefixer())
-		.pipe(sourceMaps.init())
 		.pipe(cleanCSS({
 			level: 2,
 			compatibility: 'ie8', 
@@ -33,10 +44,11 @@ gulp.task('sass', () => {
 		.pipe(sourceMaps.write())
 		.pipe(rename('styles.min.css'))
 		.pipe(gulp.dest('lib'))
-		.pipe(sync.reload({
+		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
+		.pipe(reload({
 			stream: true
-		}))
-		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
+		}));
+	done();
 });
 
 gulp.task('js', () => {
@@ -49,27 +61,29 @@ gulp.task('js', () => {
 	.pipe(source('scripts.min.js'))
 	.pipe(buffer())
 	.pipe(sourceMaps.init())
-	.pipe(uglify())
+	.pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
 	.pipe(sourceMaps.write())
 	.pipe(gulp.dest('./lib'))
-    .pipe(sync.reload({
+	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()))
+	.pipe(reload({
 		stream: true
-    }))
-	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
+	}));
 });
 
-gulp.task('serve', function() {
-    sync.init({
-        server: {
-            baseDir: './'
-        }
-    });
+gulp.task('serve', () => {
+	sync.notify("Compiling, chill for a sec");
+	sync.init({
+		server: {
+			baseDir: './'
+		}
+	});
 });
 
 gulp.task('watch', ['serve'], () => {
-    gulp.watch('./src/**/*.js', ['clean', 'js']);
-    gulp.watch('./src/**/*.scss', ['clean', 'sass']);
-    gulp.watch('**.html', sync.reload);
+	gulp.watch('./src/**/*.js', ['eslint', 'js']);
+	gulp.watch('./src/**/*.scss', ['sass']);
+	gulp.watch('**.html', reload);
 });
 
-gulp.task('default', ['clean', 'sass', 'js', 'watch']);
+gulp.task('default', ['eslint', 'clean', 'sass', 'js', 'watch']);
+

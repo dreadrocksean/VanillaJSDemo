@@ -27,4 +27,4 @@ export const footers = {
 			<p>1234 Main St., Springfield, KS 41111</p> \
 		</div> \
 	</div>',
-}
+};

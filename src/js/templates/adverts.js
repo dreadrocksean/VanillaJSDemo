@@ -7,4 +7,4 @@ export const adverts = {
 		<h3>Advert 2</h3> \
 		<p>Blah blah blah buy again buy again buy again</p> \
 	</div>',
-}
+};

@@ -12,7 +12,7 @@ export const registerRoutes = () => {
 	storeRoute('/render5', {key: 'render5'}, () => {});
 };
 
-const storeRoute = (path, key, controller) => {
+const storeRoute = (path, key/*, controller*/) => {
 	routes[path] = key;
 };
 
@@ -22,7 +22,7 @@ export const router = () => {
 	if (!pageKey) {
 		return window.location.href = '#/';
 	}
-	renderPage(pageKey)
+	renderPage(pageKey);
 
 	indicateCurrMenuItem(url.replace('/', ''));
 };
