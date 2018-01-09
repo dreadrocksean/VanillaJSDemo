@@ -71,7 +71,6 @@ gulp.task('js', () => {
 });
 
 gulp.task('serve', () => {
-	sync.notify("Compiling, chill for a sec");
 	sync.init({
 		server: {
 			baseDir: './'
