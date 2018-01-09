@@ -12,8 +12,11 @@ import babelify from 'babelify';
 import babel from 'gulp-babel';
 import del from 'del';
 import browserify from 'browserify';
+import browserSync from 'browser-sync';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
+
+const sync = browserSync.create();
 
 gulp.task('clean', () => del.sync('lib'));
 
@@ -30,6 +33,9 @@ gulp.task('sass', () => {
 		.pipe(sourceMaps.write())
 		.pipe(rename('styles.min.css'))
 		.pipe(gulp.dest('lib'))
+		.pipe(sync.reload({
+			stream: true
+		}))
 		.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 });
 
@@ -38,7 +44,7 @@ gulp.task('js', () => {
 		entries: 'src/js/app.js',
 		debug: true
 	})
-    .transform(babelify.configure({ presets: ['es2015'] }))
+	.transform(babelify.configure({ presets: ['es2015'] }))
 	.bundle()
 	.pipe(source('scripts.min.js'))
 	.pipe(buffer())
@@ -46,9 +52,24 @@ gulp.task('js', () => {
 	.pipe(uglify())
 	.pipe(sourceMaps.write())
 	.pipe(gulp.dest('./lib'))
+    .pipe(sync.reload({
+		stream: true
+    }))
 	.on('error', err => gutil.log(gutil.colors.red('[Error]'), err.toString()));
 });
 
-gulp.task('default', ['clean', 'sass', 'js'], () => {
-	return gulp.watch('src/**/*.scss', ['sass', 'js']);
+gulp.task('serve', function() {
+    sync.init({
+        server: {
+            baseDir: './'
+        }
+    });
 });
+
+gulp.task('watch', ['serve'], () => {
+    gulp.watch('./src/**/*.js', ['clean', 'js']);
+    gulp.watch('./src/**/*.scss', ['clean', 'sass']);
+    gulp.watch('**.html', sync.reload);
+});
+
+gulp.task('default', ['clean', 'sass', 'js', 'watch']);

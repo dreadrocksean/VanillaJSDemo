@@ -4,10 +4,7 @@
   "description": "A pure javascript solution to reusable components complete with routing and menu list navigation.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
-    "build:sass": "node-sass -r --source-map-embed --source-map-contents --output-style compressed src/styles -o lib/styles",
-    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
-    "start": "npm run watch:sass && babel src/js -w --minified -s true -d lib/js"
+    "test": "npm test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +21,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
+    "browser-sync": "^2.23.3",
     "browserify": "^15.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
