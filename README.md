@@ -23,7 +23,7 @@ It even has es6 linting to keep you to your chosen coding standards.
 
 ```
 $ git clone https://github.com/dreadrocksean/VanillaJSDemo.git
-$ git checkout feature/ES6
+$ git checkout feature/webpack
 $ git rm -rf node_modules (optional and still the cleanest way to prune)
 $ npm i
 $ gulp
