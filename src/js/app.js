@@ -1,4 +1,5 @@
 import {registerRoutes, router} from './routing/routes';
+require('../styles/app.scss');
 
 const app = () => {
 	window.addEventListener('load', app);
