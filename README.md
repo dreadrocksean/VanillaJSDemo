@@ -2,12 +2,12 @@
 
 ## Synopsis
 
-A simple pure Javascript solution to basic component reuse, routing, sass, ES6 and the build tool, `Gulp`.
+A simple pure Javascript solution to basic component reuse, routing, sass, ES6 and the build tool, `Webpack`.
 
 ## Motivation
 
 This project was first inspired by a company asking me to write this in vanilla js as a test for employment.  I took it as an opportunity to see what could be done with pure JS in this world of multiple JS frameworks.
-Hopefully, this would help beginners gain an easier understanding of all this mess
+Hopefully, this would help beginners gain an easier understanding of all this mess.
 
 ## Branches
 
