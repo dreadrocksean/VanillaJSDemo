@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A simple pure Javascript solution to basic component reuse, routing, sass, ES6 and the build tool, `Gulp`.
+A simple pure Javascript/CSS solution to basic component reuse, routing.
 
 ## Motivation
 
