@@ -1,8 +1,7 @@
 function app() {
-	window.addEventListener('hashchange', router);
-	registerRoutes();
-	router();
+	window.addEventListener('hashchange', root.router);
+	root.registerRoutes();
+	root.router();
 }
-(function() {
-	window.addEventListener('load', app);
-})();
+
+window.addEventListener('load', app);
